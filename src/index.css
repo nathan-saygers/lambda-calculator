@@ -24,7 +24,7 @@ code {
 .num-btn-container {
   display:flex;
   flex-wrap: wrap;
-  width: 15rem;
+  width: 24rem;
 }
 
 button {
@@ -35,7 +35,7 @@ button {
   box-shadow: 0px 3px #46020A;
   border: none;
   color: white;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   background-color: #113C78;
 }
 
@@ -48,6 +48,6 @@ button {
 }
 
 .zero {
-  width: 9rem;
+  width: 14rem;
   border-radius: 37px;
 }
