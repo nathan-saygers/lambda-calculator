@@ -4,7 +4,7 @@ import { jsxOpeningFragment } from "@babel/types";
 const OperatorButton = (props) => {
   return (
     <div>
-      <button class="op-btn">{props.currentOp.char}</button>
+      <button className="op-btn">{props.currentOp.char}</button>
     </div>
   );
 };

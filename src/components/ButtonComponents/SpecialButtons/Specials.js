@@ -12,7 +12,7 @@ const Specials = () => {
   console.log(specialData);
 
   return (
-    <div>
+    <div className="spec-btn-container">
       {specialData.map((specialChar, index) => {
         return <SpecialButton specialChar={specialChar} key={index}/>
       })}
