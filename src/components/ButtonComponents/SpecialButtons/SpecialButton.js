@@ -3,7 +3,7 @@ import React from "react";
 const SpecialButton = (props) => {
   return (
     <div>
-      <button className="spec-btn">{props.specialChar}</button>
+      <button onClick={() => props.enterValue(props.specialChar)} className="spec-btn">{props.specialChar}</button>
     </div>
   );
 };

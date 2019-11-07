@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Numbers from "./components/ButtonComponents/NumberButtons/Numbers"
 import Operators from "./components/ButtonComponents/OperatorButtons/Operators";
 import Specials from "./components/ButtonComponents/SpecialButtons/Specials"
@@ -17,18 +17,42 @@ function App() {
   // Your functions should accept a parameter of the the item data being displayed to the DOM (ie - should recieve 5 if the user clicks on
   // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
   // Don't forget to pass the functions (and any additional data needed) to the components as props
+  const [displayValue, setDisplayValue] = useState("0");
+
+  const enterValue = function (value) {
+    console.log(displayValue === "0")
+   if(displayValue === "0" && value !== "+/-") {
+     setDisplayValue(value)
+   } else {
+    switch (value) {
+      case "C":
+        setDisplayValue("0");
+        break;
+      case "+/-":
+        setDisplayValue("Don't use that button");
+        break;
+      case "=":
+        setDisplayValue(eval(displayValue));
+        break;
+      default:
+        setDisplayValue(displayValue + value);
+    }
+  }
+}
+
+
 
   return (
     <div className="container">
       <Logo />
       <div className="App">
-        <Display />
+        <Display displayValue={displayValue}/>
         <div className="btn-container">
           <div>
-            <Specials />
-            <Numbers />
+            <Specials enterValue={enterValue}/>
+            <Numbers enterValue={enterValue}/>
           </div>
-          <Operators />
+          <Operators enterValue={enterValue}/>
         </div>
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
       </div>

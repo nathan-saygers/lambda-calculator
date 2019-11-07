@@ -6,12 +6,12 @@ import {operators} from "../../../data";
 
 //Import your array data to from the provided data file
 
-const Operators = () => {
+const Operators = (props) => {
   const [operatorData] = useState(operators);
   return (
     <div>
       {operatorData.map((currentOp, index) => {
-        return <OperatorButton currentOp={currentOp} key={index}/>
+        return <OperatorButton enterValue={props.enterValue} currentOp={currentOp} key={index}/>
         })
       }
     </div>
